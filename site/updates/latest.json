@@ -1,0 +1,19 @@
+{
+    "product":  "Stupefy",
+    "version":  "1.0.0",
+    "publishedUtc":  "2026-11-08T17:00:12Z",
+    "notes":  "Multi-connection downloads (up to 32 in Pro) with a worker-pool scheduler, real resume, stall detection and retries.\nBrowser extension for Chrome and Edge: capture downloads, a \"Download this video\" button on any site, send whole pages of links.\nVideo downloads at the quality you pick, or audio only, with the tools kept up to date automatically.\nCategories, searchable history, batch add, site grabber, FTP, proxy, speed limit and quiet hours.\nQueues, scheduler, saved site logins, antivirus scan, custom sounds and the gold Pro look in Pro.\nDark and light themes that follow Windows; tray mode; in-app updates.",
+    "notesUrl":  "https://devaccindia-hash.github.io/stupefy/changelog#v1.0.0",
+    "downloadPageUrl":  "https://devaccindia-hash.github.io/stupefy/download",
+    "installer":  {
+                      "url":  "https://github.com/devaccindia-hash/stupefy/releases/download/v1.0.0/Stupefy-Setup-1.0.0.exe",
+                      "sha256":  "fd63ea63e4850abe7dc336aea664de810c903d0503fead870d9d6a54ce36d20d",
+                      "sizeBytes":  55347530
+                  },
+    "extension":  {
+                      "version":  "0.4.0",
+                      "url":  "https://github.com/devaccindia-hash/stupefy/releases/download/v1.0.0/Stupefy-Extension-0.4.0.zip",
+                      "sha256":  "604faf1464354050ebb3614754b2e55fc460a6d363a0925abf5c2d9c0f58d1d8",
+                      "sizeBytes":  47341
+                  }
+}

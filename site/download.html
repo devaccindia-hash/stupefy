@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Stupefy</title>
+<meta name="description" content="Download the Stupefy download manager for Windows: the installer, winget, and the Chrome/Edge companion extension.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="logo-mark.png" alt="">Stupefy</a>
+    <a class="link" href="./#how">How it works</a>
+    <a class="link" href="./#compare">Compare</a>
+    <a class="link" href="./#pro">Pro</a>
+    <a class="link" href="./#faq">FAQ</a>
+    <a class="link" href="changelog">What's new</a>
+    <a class="link" href="privacy">Privacy</a>
+    <a class="cta" href="download" aria-current="page">Download</a>
+  </div>
+</nav>
+
+<section class="wrap tight" id="app">
+  <h2>Download Stupefy</h2>
+  <p class="sub">Free. Windows 10 (version 1809) and Windows 11, 64-bit. No account, no .NET to install.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Installer</h3>
+      <p>Installs for your user account without an administrator prompt (or for everyone, if you choose). Updates install themselves from inside the app.</p>
+      <!-- Filled from /updates/latest.json, the same feed the app reads, so this page can never name a different version than the app offers. -->
+      <div class="meta" id="installer-meta">Version <span id="installer-version">…</span></div>
+      <a class="btn primary" id="installer-link" href="https://github.com/devaccindia-hash/stupefy/releases/latest">Download Stupefy-Setup.exe</a>
+      <p class="hash" style="margin-top:12px">SHA-256: <span id="installer-sha">—</span></p>
+    </div>
+    <div class="card">
+      <h3>winget</h3>
+      <p>From a terminal, once the package is in the community repository:</p>
+      <pre><code>winget install stupefy</code></pre>
+      <p>Upgrades: <code>winget upgrade stupefy</code>.</p>
+    </div>
+    <div class="card">
+      <h3>Microsoft Store</h3>
+      <p>The Store edition is the same app, kept up to date by the Store. The listing goes live after certification; this card will carry the link.</p>
+    </div>
+    <div class="card">
+      <h3>Verify your download</h3>
+      <p>In PowerShell, compare the printed hash with the one shown next to the installer:</p>
+      <pre><code>Get-FileHash "$env:USERPROFILE\Downloads\Stupefy-Setup.exe"</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="extension">
+  <h2>Browser extension (Stupefy Companion)</h2>
+  <p class="sub">Catches downloads, floats the "Download this video" button, sends whole pages of links. It talks only to the Stupefy app on your PC.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Chrome, Edge, Brave, Vivaldi</h3>
+      <div class="meta">Version <span id="extension-version">…</span></div>
+      <a class="btn primary" id="extension-link" href="https://github.com/devaccindia-hash/stupefy/releases/latest">Download the extension (.zip)</a>
+      <ol class="steps-list" style="margin-top:14px">
+        <li>Unzip it to a folder you'll keep (for example <code>Documents\Stupefy Companion</code>).</li>
+        <li>Open <code>chrome://extensions</code> (or <code>edge://extensions</code>), switch on <strong>Developer mode</strong>.</li>
+        <li>Click <strong>Load unpacked</strong> and pick that folder.</li>
+        <li>The options page opens and pairs with Stupefy in one click (Stupefy must be running).</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>From the stores</h3>
+      <p>Edge Add-ons and Chrome Web Store listings follow; they install with one click and update on their own. Until then, the zip above is the same extension.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="requirements">
+  <h2>Requirements</h2>
+  <div class="callout">Windows 10 version 1809 (build 17763) or later, or Windows 11; 64-bit. About 150 MB of disk space. Video downloads fetch yt-dlp and FFmpeg (about 140 MB) on first use.</div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Developer Inayat</span>
+    <a href="./">Home</a> · <a href="changelog">What's new</a> · <a href="privacy">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  // The feed is the single source of truth for "latest": the app reads the same file.
+  fetch("updates/latest.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(feed => {
+    if (!feed) return;
+    const version = document.getElementById("installer-version");
+    version.textContent = feed.version || "…";
+    const installer = feed.installer || {};
+    if (installer.url) {
+      const link = document.getElementById("installer-link");
+      link.href = installer.url;
+      link.textContent = "Download Stupefy-Setup-" + (feed.version || "") + ".exe";
+      if (installer.sizeBytes) version.textContent += "  ·  " + (installer.sizeBytes / 1048576).toFixed(1) + " MB";
+      if (feed.publishedUtc) version.textContent += "  ·  " + new Date(feed.publishedUtc).toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" });
+      if (installer.sha256) document.getElementById("installer-sha").textContent = installer.sha256;
+    }
+    const extension = feed.extension || {};
+    if (extension.url) {
+      document.getElementById("extension-version").textContent = extension.version || "";
+      const link = document.getElementById("extension-link");
+      link.href = extension.url;
+      link.textContent = "Download Stupefy Companion " + (extension.version || "") + " (.zip)";
+    }
+  }).catch(() => {});
+</script>
+</body>
+</html>

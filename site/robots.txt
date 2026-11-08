@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /updates/
+Sitemap: https://devaccindia-hash.github.io/stupefy/sitemap.xml

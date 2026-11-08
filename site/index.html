@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stupefy — a download manager for Windows that finishes the job</title>
+<meta name="description" content="Stupefy is a free download manager for Windows: up to 32 connections per file, resume after a crash, a reboot or an expired link, a 'Download this video' button on any site, queues and a scheduler. Pro is $5, once.">
+<meta property="og:title" content="Stupefy — a download manager for Windows that finishes the job">
+<meta property="og:description" content="Up to 32 connections, resume after anything, a Download-this-video button on any site. Free; Pro is $5 once.">
+<meta property="og:image" content="screenshots/01-main-dark.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="logo-mark.png" alt="">Stupefy</a>
+    <a class="link" href="#how">How it works</a>
+    <a class="link" href="#compare">Compare</a>
+    <a class="link" href="#pro">Pro</a>
+    <a class="link" href="#faq">FAQ</a>
+    <a class="link" href="changelog">What's new</a>
+    <a class="cta" href="download">Download</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker">A download manager for Windows</p>
+      <h1>Downloads that <span class="mark">finish</span>, from an app that then gets out of your way.</h1>
+      <p class="lead">Stupefy splits a file across up to 32 connections, picks up exactly where it stopped after a crash, a reboot or an expired link, and puts a <strong>Download this video</strong> button on whatever you're watching. Free. No ads, no account, no telemetry.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="download">Download for Windows</a>
+        <a class="btn secondary" href="#how">See how it works</a>
+      </div>
+      <p class="fine" id="hero-fine">Windows 10 (1809) and Windows 11, 64-bit · also <code>winget install stupefy</code></p>
+    </div>
+    <div>
+      <img class="shot" src="screenshots/01-main-dark.png" alt="Stupefy's main window with two downloads in progress" width="1200" height="760">
+      <p class="caption">Two downloads, eight connections each; the strip at the bottom shows every segment filling in.</p>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="how">
+  <p class="kicker">How it works</p>
+  <h2>Four things happen. You only see the first one.</h2>
+  <p class="sub">Download managers are faster than browsers for one reason, and it isn't "more connections". Here is what Stupefy actually does with a link.</p>
+  <div class="steps">
+    <div class="step">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l7 16 2.5-6.5L20 11z"/><path d="M13.5 13.5L20 20"/></svg>
+      <span class="num">1</span>
+      <h3>You click. Or paste. Or do nothing.</h3>
+      <p>Add a link, paste a whole list, let the browser extension catch a download, or press the floating button on a video. Copy a link and Stupefy offers to take it.</p>
+    </div>
+    <div class="step">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>
+      <span class="num">2</span>
+      <h3>It asks the server what it can do.</h3>
+      <p>A quick probe: how big the file is, whether the server lets a download start in the middle, what the file is really called. Then the file is cut into segments.</p>
+    </div>
+    <div class="step">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg>
+      <span class="num">3</span>
+      <h3>A worker pool keeps every connection busy.</h3>
+      <p>More segments are planned than run at once, so an idle connection always has work and nobody waits for the slowest one. That, not the connection count, is the trick. Free runs 4 connections; Pro runs 32.</p>
+    </div>
+    <div class="step">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg>
+      <span class="num">4</span>
+      <h3>If anything breaks, it resumes from the exact byte.</h3>
+      <p>Crash, reboot, Wi-Fi gone, link expired: paste a fresh link and nothing starts over. A stalled connection is noticed and retried on its own. Finished files get a checksum if you want one.</p>
+    </div>
+  </div>
+  <p class="segcap">The app's own progress strip, redrawn here: every segment fills from its own offset, at its own pace.</p>
+  <div class="segbar" aria-hidden="true">
+    <span style="--d:0s"></span><span style="--d:.7s"></span><span style="--d:.2s"></span><span style="--d:1.1s"></span>
+    <span style="--d:.4s"></span><span style="--d:1.5s"></span><span style="--d:.9s"></span><span style="--d:.3s"></span>
+  </div>
+</section>
+
+<section class="wrap" id="features">
+  <p class="kicker">What it does</p>
+  <h2>The whole list, in plain words.</h2>
+  <div class="grid three">
+    <div class="card"><h3>Resume after anything</h3><p>Reboots, crashes, dropped Wi-Fi, expired links. Progress lives on disk, so even a deleted temp file is detected and handled instead of corrupting the result.</p></div>
+    <div class="card"><h3>Browser capture</h3><p>The Chrome and Edge extension catches downloads of the file types you choose, floats a "Download this video" button over any player, and sends whole pages of links at once.</p></div>
+    <div class="card"><h3>Video at the quality you pick</h3><p>Streaming players go through yt-dlp, which handles thousands of sites and is kept up to date for you. Pick 1080p, 720p, or audio only as MP3.</p></div>
+    <div class="card"><h3>Organised without effort</h3><p>Categories file every download into the right folder by type. History is searchable. The complete dialog opens the file or its folder in one click.</p></div>
+    <div class="card"><h3>Speed when you want it, quiet when you don't</h3><p>A speed limit for when you're on a call, quiet hours that lower it on a schedule, and a proxy if you need one. FTP too.</p></div>
+    <div class="card"><h3>Looks like it belongs on Windows 11</h3><p>Dark and light themes that follow Windows, a tray mode, keyboard shortcuts everywhere, and updates that install from inside the app when you say so.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="compare">
+  <p class="kicker">Compared with</p>
+  <h2>An honest comparison with what you'd use instead.</h2>
+  <p class="sub">I used Internet Download Manager for years and I think it's good software. This table is here so you can decide, not so I can win it.</p>
+  <div class="table-wrap">
+    <table class="compare">
+      <thead>
+        <tr><th></th><th>Stupefy Free</th><th>Stupefy Pro</th><th>Internet Download Manager</th><th>Free Download Manager</th><th>Your browser</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Price</td><td class="us">Free</td><td class="us">$5, once</td><td>Paid, per PC: a one-year or a lifetime licence (about ₹1,110 / ₹2,310 on their site in India, Nov 2026); 30-day trial</td><td>Free, donations welcome</td><td>Free</td></tr>
+        <tr><td>Connections per file</td><td class="us">4</td><td class="us">32</td><td>Dynamic segmentation, "up to 8 times" faster</td><td>Segmented, "up to 10× faster"</td><td>1</td></tr>
+        <tr><td>Resume after a crash or reboot</td><td class="us"><span class="yes">Yes</span></td><td class="us"><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td><span class="part">Sometimes</span>, if the server allows it and the tab is still there</td></tr>
+        <tr><td>Continue with a fresh link after the old one expired</td><td class="us"><span class="yes">Yes</span>, from the same byte</td><td class="us"><span class="yes">Yes</span></td><td>Not stated</td><td>Not stated</td><td><span class="no">No</span>, starts over</td></tr>
+        <tr><td>Catches browser downloads</td><td class="us"><span class="yes">Yes</span>, Chrome and Edge extension</td><td class="us"><span class="yes">Yes</span></td><td><span class="yes">Yes</span>, most browsers</td><td><span class="yes">Yes</span>, Chrome, Firefox, Edge</td><td>—</td></tr>
+        <tr><td>"Download this video" button over any player</td><td class="us"><span class="yes">Yes</span>, any site</td><td class="us"><span class="yes">Yes</span></td><td><span class="yes">Yes</span>, its download panel</td><td><span class="part">Via add-ons</span></td><td><span class="no">No</span></td></tr>
+        <tr><td>Queues and scheduler</td><td class="us"><span class="part">One queue</span>; a single download can be scheduled</td><td class="us"><span class="yes">Several queues</span>, each with its own limit and repeating schedule</td><td><span class="yes">Yes</span>, several queues</td><td>Not stated</td><td><span class="no">No</span></td></tr>
+        <tr><td>Saved site logins, virus scan of finished files</td><td class="us"><span class="no">No</span></td><td class="us"><span class="yes">Yes</span></td><td><span class="yes">Site logins</span></td><td>Not stated</td><td><span class="part">Browser's own</span></td></tr>
+        <tr><td>Dark theme that follows Windows</td><td class="us"><span class="yes">Yes</span></td><td class="us"><span class="yes">Yes</span>, plus a gold Pro look</td><td><span class="yes">Yes</span></td><td>Not stated</td><td><span class="yes">Yes</span></td></tr>
+        <tr><td>Ads, telemetry, account</td><td class="us"><span class="yes">None</span></td><td class="us"><span class="yes">None</span></td><td>"No spyware or adware", per their site</td><td>"No adware, no malware", per their site</td><td>Depends on the browser</td></tr>
+        <tr><td>Platforms</td><td class="us">Windows 10 and 11</td><td class="us">Windows 10 and 11</td><td>Windows</td><td>Windows, macOS, Linux, Android</td><td>Everywhere</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="compare-note">The two columns about other products come from their own websites as I read them on 8 November 2026. If I've got something wrong or out of date, tell me and I'll fix it the same week.</p>
+</section>
+
+<section class="wrap" id="screenshots">
+  <p class="kicker">A closer look</p>
+  <h2>Screens, not stock art.</h2>
+  <div class="shots">
+    <figure><img src="screenshots/01-main-dark.png" alt="Main window, dark theme" loading="lazy"><figcaption>The main window: live-sorted list, sidebar views that count themselves, the details card below.</figcaption></figure>
+    <figure><img src="screenshots/02-details-dark.png" alt="Download details with the segmented progress strip" loading="lazy"><figcaption>Details: each connection fills in from its own offset. Link &amp; speed and Properties sit on the other tabs.</figcaption></figure>
+    <figure><img src="screenshots/03-main-light.png" alt="Main window, light theme" loading="lazy"><figcaption>Light theme, because it follows Windows and some of you like daylight.</figcaption></figure>
+    <figure><img src="screenshots/05-pro-gold-dark.png" alt="Stupefy Pro with its gold accent" loading="lazy"><figcaption>Yes, Pro turns the whole app gold. I wanted paying for it to feel like something.</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="pro">
+  <p class="kicker">Pricing</p>
+  <h2>Free is complete. Pro is for people who download a lot.</h2>
+  <div class="pricing">
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="price">$0 <small>forever, no time limit, no nag screens</small></div>
+      <ul>
+        <li>4 connections per download</li>
+        <li>Resume, retries, stall detection</li>
+        <li>Browser extension and the video button</li>
+        <li>Categories, history, batch add, site grabber</li>
+        <li>Speed limit, quiet hours, proxy, FTP</li>
+        <li>Dark and light themes, in-app updates</li>
+      </ul>
+      <a class="btn outline" href="download">Download</a>
+    </div>
+    <div class="plan pro">
+      <h3>Pro <span class="badge">ONE-TIME</span></h3>
+      <div class="price">$5 <small>once. Every update included. Up to 10 of your own PCs.</small></div>
+      <ul>
+        <li>Up to 32 connections per download</li>
+        <li>Several queues, each with its own limit and schedule</li>
+        <li>Scheduler: start and stop at set times, on chosen days</li>
+        <li>Saved site logins, applied automatically</li>
+        <li>Antivirus scan of every finished file</li>
+        <li>Custom event sounds, and the gold Pro look</li>
+      </ul>
+      <!-- Your Gumroad product page (the permalink is set in LAUNCH-CHECKLIST step 2). -->
+      <a class="btn primary" href="https://developerinayat.gumroad.com/l/stupefypro">Get Stupefy Pro for $5</a>
+    </div>
+  </div>
+  <p class="sub why-price">Why five dollars? Because it's what I'd pay without thinking about it, and I'd rather have many people pay a little than a few pay a lot. The key arrives by e-mail from Gumroad; paste it into Settings → Stupefy Pro and the app turns gold on the spot. If $5 is still a lot where you live, Gumroad applies a regional discount at checkout.</p>
+</section>
+
+<section class="wrap faq" id="faq">
+  <p class="kicker">FAQ</p>
+  <h2>Questions people ask before installing.</h2>
+  <details><summary>Does the free edition expire, or start nagging after a while?</summary><p>No. It has no time limit and no nag screens. Pro adds features; it does not unlock a trial that's running out.</p></details>
+  <details><summary>Windows SmartScreen warned me about the installer. Is it safe?</summary><p>The installer isn't code-signed yet; a signing certificate costs more per year than a new app earns in its first months, so that comes later. Until then: the download page shows the installer's SHA-256, and you can check it with one PowerShell command. The app sends nothing anywhere except the connections listed in the <a href="privacy">privacy policy</a>.</p></details>
+  <details><summary>How does the license work?</summary><p>Buy once on Gumroad, get a key by e-mail, paste it into Settings → Stupefy Pro. It's checked online once, then confirmed quietly now and then; being offline for weeks doesn't switch Pro off. One key covers up to 10 of your own PCs; deactivate on one to free a slot.</p></details>
+  <details><summary>How do updates work?</summary><p>Stupefy asks this website about once a day whether there's a newer version. If there is, you see what's new and install it when you click Install, inside the app, after it has checked the installer against its published checksum. You can turn the daily check off and use Help → Check for updates instead.</p></details>
+  <details><summary>Which sites does the video button work on?</summary><p>Any page with a video player. A plain video file downloads directly with all connections; streaming players go through yt-dlp, which understands thousands of sites and is refreshed weekly because sites change. Downloading a video you don't have the rights to is on you, not the tool.</p></details>
+  <details><summary>Can I get a refund?</summary><p>Yes. Reply to your Gumroad receipt within 30 days and you'll get your money back; the key switches itself off within a week. No forms, no questions you have to answer.</p></details>
+  <details><summary>Mac or Linux?</summary><p>No, and probably not soon. Stupefy is written for Windows specifically, and I'd rather make it excellent on one platform than passable on three.</p></details>
+  <details><summary>Is it open source?</summary><p>Not yet. The engine is written from scratch in C# and .NET. The browser extension is plain JavaScript with no build step; unzip it and read it.</p></details>
+  <details><summary>What does it send, and to whom?</summary><p>Only what it has to: the sites you download from, this website for the version check, GitHub for the video-tool updates, and Gumroad if you activate a key. No analytics, no crash reports, no account. The <a href="privacy">privacy policy</a> is one page long on purpose.</p></details>
+  <details><summary>Internet Download Manager exists. Why this?</summary><p>IDM is good, and I used it for years. I wanted one that looks like it belongs on Windows 11, that is free for the basics, that is honest about what it sends, and that doesn't cost a yearly fee per PC. Since nobody had made it, I did.</p></details>
+</section>
+
+<section class="wrap" id="maker">
+  <p class="kicker">From the maker</p>
+  <div class="note">
+    <p>Hi, I'm Inayat. I'm a developer in India, and Stupefy started as the download manager I wanted for myself: fast, quiet, and done with nagging. The engine is built from scratch and tested against real servers that drop connections, lie about file sizes and expire links, because that's what the internet does.</p>
+    <p>I'm one person, which means two things. Bugs get fixed by the person who wrote them, usually quickly. And I don't have a marketing department, so if Stupefy saves you time, telling one friend helps more than you'd think.</p>
+    <p>If something breaks, write to me. The address is in the app's About box.</p>
+    <div class="sig">Inayat<small>Developer Inayat · India · <a href="https://developerinayat.com">developerinayat.com</a></small></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Proudly made with ❤️ in India by <a href="https://developerinayat.com">Developer Inayat</a>. All rights reserved © 2026.</span>
+    <a href="download">Download</a> · <a href="changelog">What's new</a> · <a href="privacy">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  // The version line in the hero comes from the same feed the app reads, so it can't drift.
+  fetch("updates/latest.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(feed => {
+    if (!feed || !feed.version) return;
+    const size = feed.installer && feed.installer.sizeBytes ? " · " + (feed.installer.sizeBytes / 1048576).toFixed(1) + " MB" : "";
+    document.getElementById("hero-fine").innerHTML = "Version " + feed.version + size + " · Windows 10 (1809) and Windows 11, 64-bit · also <code>winget install stupefy</code>";
+  }).catch(() => {});
+</script>
+</body>
+</html>

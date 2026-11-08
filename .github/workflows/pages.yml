@@ -1,0 +1,36 @@
+# Deploys the website (the repo's site/ folder) to GitHub Pages whenever it changes. Lives in the PUBLIC repo
+# (devaccindia-hash/stupefy) at .github/workflows/pages.yml; tools/release/release.ps1 copies it there from
+# tools/github/pages.yml in the private repo on every release, so this file is the source of truth.
+# The installer and extension zip are NOT part of the site: they are GitHub Release assets. The site only carries
+# updates/latest.json, which names them.
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
