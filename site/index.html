@@ -94,6 +94,7 @@
     <div class="card"><h3>Video at the quality you pick</h3><p>Streaming players go through yt-dlp, which handles thousands of sites and is kept up to date for you. Pick 1080p, 720p, or audio only as MP3.</p></div>
     <div class="card"><h3>Organised without effort</h3><p>Categories file every download into the right folder by type. History is searchable. The complete dialog opens the file or its folder in one click.</p></div>
     <div class="card"><h3>Speed when you want it, quiet when you don't</h3><p>A speed limit for when you're on a call, quiet hours that lower it on a schedule, and a proxy if you need one. FTP too.</p></div>
+    <div class="card"><h3>Torrents, in the same list</h3><p>Paste a magnet link or open a .torrent file and it sits beside your other downloads: pause, resume, speed limit, queue. Every piece is verified as it arrives. Stupefy uploads only while a torrent is downloading, and it never asks Windows Firewall for anything.</p></div>
     <div class="card"><h3>Looks like it belongs on Windows 11</h3><p>Dark and light themes that follow Windows, a tray mode, keyboard shortcuts everywhere, and updates that install from inside the app when you say so.</p></div>
   </div>
 </section>
@@ -114,6 +115,7 @@
         <tr><td>Continue with a fresh link after the old one expired</td><td class="us"><span class="yes">Yes</span>, from the same byte</td><td class="us"><span class="yes">Yes</span></td><td>Not stated</td><td>Not stated</td><td><span class="no">No</span>, starts over</td></tr>
         <tr><td>Catches browser downloads</td><td class="us"><span class="yes">Yes</span>, Chrome and Edge extension</td><td class="us"><span class="yes">Yes</span></td><td><span class="yes">Yes</span>, most browsers</td><td><span class="yes">Yes</span>, Chrome, Firefox, Edge</td><td>—</td></tr>
         <tr><td>"Download this video" button over any player</td><td class="us"><span class="yes">Yes</span>, any site</td><td class="us"><span class="yes">Yes</span></td><td><span class="yes">Yes</span>, its download panel</td><td><span class="part">Via add-ons</span></td><td><span class="no">No</span></td></tr>
+        <tr><td>Torrents (magnet links and .torrent files)</td><td class="us"><span class="yes">Yes</span></td><td class="us"><span class="yes">Yes</span></td><td><span class="no">Not among its listed features</span></td><td><span class="yes">Yes</span>, "a full BitTorrent client is built in"</td><td><span class="no">No</span></td></tr>
         <tr><td>Queues and scheduler</td><td class="us"><span class="part">One queue</span>; a single download can be scheduled</td><td class="us"><span class="yes">Several queues</span>, each with its own limit and repeating schedule</td><td><span class="yes">Yes</span>, several queues</td><td>Not stated</td><td><span class="no">No</span></td></tr>
         <tr><td>Saved site logins, virus scan of finished files</td><td class="us"><span class="no">No</span></td><td class="us"><span class="yes">Yes</span></td><td><span class="yes">Site logins</span></td><td>Not stated</td><td><span class="part">Browser's own</span></td></tr>
         <tr><td>Dark theme that follows Windows</td><td class="us"><span class="yes">Yes</span></td><td class="us"><span class="yes">Yes</span>, plus a gold Pro look</td><td><span class="yes">Yes</span></td><td>Not stated</td><td><span class="yes">Yes</span></td></tr>
@@ -122,7 +124,7 @@
       </tbody>
     </table>
   </div>
-  <p class="compare-note">The two columns about other products come from their own websites as I read them on 8 November 2026. If I've got something wrong or out of date, tell me and I'll fix it the same week.</p>
+  <p class="compare-note">The two columns about other products come from their own websites as I read them on 8 November 2026 (the torrent row on 25 November). If I've got something wrong or out of date, tell me and I'll fix it the same week.</p>
 </section>
 
 <section class="wrap" id="screenshots">
@@ -149,6 +151,7 @@
         <li>Browser extension and the video button</li>
         <li>Categories, history, batch add, site grabber</li>
         <li>Speed limit, quiet hours, proxy, FTP</li>
+        <li>Torrents: magnet links and .torrent files</li>
         <li>Dark and light themes, in-app updates</li>
       </ul>
       <a class="btn outline" href="download">Download</a>
@@ -182,7 +185,8 @@
   <details><summary>Can I get a refund?</summary><p>Yes. Reply to your Gumroad receipt within 30 days and you'll get your money back; the key switches itself off within a week. No forms, no questions you have to answer.</p></details>
   <details><summary>Mac or Linux?</summary><p>No, and probably not soon. Stupefy is written for Windows specifically, and I'd rather make it excellent on one platform than passable on three.</p></details>
   <details><summary>Is it open source?</summary><p>Not yet. The engine is written from scratch in C# and .NET. The browser extension is plain JavaScript with no build step; unzip it and read it.</p></details>
-  <details><summary>What does it send, and to whom?</summary><p>Only what it has to: the sites you download from, this website for the version check, GitHub for the video-tool updates, and Gumroad if you activate a key. No analytics, no crash reports, no account. The <a href="privacy">privacy policy</a> is one page long on purpose.</p></details>
+  <details><summary>Does it download torrents?</summary><p>Yes, since 1.1. Paste a magnet link, or use File → Add torrent file. It finds peers through the torrent's trackers and the DHT, checks every piece, and puts the finished file or folder where your other downloads go. Two things to know: as in any torrent client, the peers you exchange data with can see your IP address, and torrent traffic does not go through the proxy you set for ordinary downloads. Stupefy uploads while a torrent is downloading (you can cap that in Settings → Network) and stops when it is complete. Download only what you have the right to.</p></details>
+  <details><summary>What does it send, and to whom?</summary><p>Only what it has to: the sites you download from, the peers of a torrent you add, this website for the version check, GitHub for the video-tool updates, and Gumroad if you activate a key. No analytics, no crash reports, no account. The <a href="privacy">privacy policy</a> is one page long on purpose.</p></details>
   <details><summary>Internet Download Manager exists. Why this?</summary><p>IDM is good, and I used it for years. I wanted one that looks like it belongs on Windows 11, that is free for the basics, that is honest about what it sends, and that doesn't cost a yearly fee per PC. Since nobody had made it, I did.</p></details>
 </section>
 

@@ -44,8 +44,10 @@
     <li>api.gumroad.com, only if you activate a Stupefy Pro license: the license key you typed is sent to check it, and re-checked in the background now and then. Like any web request this shows Gumroad your IP address; Gumroad's own privacy policy covers your purchase. The e-mail address Gumroad reports back is stored on your PC in encrypted form only.</li>
   </ul>
 
-  <h2>Browser extension (Stupefy Companion)</h2>
-  <p>It talks only to the Stupefy app on your own computer (127.0.0.1). When you send a download or a video from a site, it passes that site's cookies to the app on your PC so the download can use your login; they never leave your computer. You can switch cookie sending off in the extension's options. The extension collects no browsing data.</p>
+  <h2>Torrents</h2>
+<p>When you add a magnet link or a .torrent file, Stupefy contacts that torrent's trackers, the public BitTorrent DHT and other peers, as every torrent client does. Those parties see your IP address and which torrent you are downloading; that is how the protocol works, and it is not sent to the developer. Torrent connections do not use the proxy set for ordinary downloads. Stupefy uploads pieces to other peers only while the torrent is downloading and stops when it is complete. If you never add a torrent, none of this happens.</p>
+
+<h2>Browser extension (Stupefy Companion)</h2>  <p>It talks only to the Stupefy app on your own computer (127.0.0.1). When you send a download or a video from a site, it passes that site's cookies to the app on your PC so the download can use your login; they never leave your computer. You can switch cookie sending off in the extension's options. The extension collects no browsing data.</p>
 
   <h2>This website</h2>
   <p>It is static pages with no analytics, cookies or forms. It is published with GitHub Pages, whose host keeps ordinary server logs, as every host does.</p>

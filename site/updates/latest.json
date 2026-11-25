@@ -1,19 +1,19 @@
 {
     "product":  "Stupefy",
-    "version":  "1.0.0",
-    "publishedUtc":  "2026-11-08T17:02:59Z",
-    "notes":  "Multi-connection downloads (up to 32 in Pro) with a worker-pool scheduler, real resume, stall detection and retries.\nBrowser extension for Chrome and Edge: capture downloads, a \"Download this video\" button on any site, send whole pages of links.\nVideo downloads at the quality you pick, or audio only, with the tools kept up to date automatically.\nCategories, searchable history, batch add, site grabber, FTP, proxy, speed limit and quiet hours.\nQueues, scheduler, saved site logins, antivirus scan, custom sounds and the gold Pro look in Pro.\nDark and light themes that follow Windows; tray mode; in-app updates.",
-    "notesUrl":  "https://devaccindia-hash.github.io/stupefy/changelog#v1.0.0",
+    "version":  "1.1.0",
+    "publishedUtc":  "2026-11-25T17:17:58Z",
+    "notes":  "Torrents: paste a magnet link or open a .torrent file (File, Add torrent file) and it downloads in the same list, with pause, resume, speed limits and queues.\nTorrents need no firewall permission: Stupefy only connects out to peers, and uploads only while a torrent is downloading.\nBrowser extension 0.5.0: right-click a magnet link to send it to Stupefy.\nSettings, Network: upload limit for torrents, and an option to open magnet links and .torrent files with Stupefy.\nThe installer\u0027s \"Installed apps\" entry now links to the right website.",
+    "notesUrl":  "https://devaccindia-hash.github.io/stupefy/changelog#v1.1.0",
     "downloadPageUrl":  "https://devaccindia-hash.github.io/stupefy/download",
     "installer":  {
-                      "url":  "https://github.com/devaccindia-hash/stupefy/releases/download/v1.0.0/Stupefy-Setup-1.0.0.exe",
-                      "sha256":  "fd63ea63e4850abe7dc336aea664de810c903d0503fead870d9d6a54ce36d20d",
-                      "sizeBytes":  55347530
+                      "url":  "https://github.com/devaccindia-hash/stupefy/releases/download/v1.1.0/Stupefy-Setup-1.1.0.exe",
+                      "sha256":  "b1d1ab19f8e57c00828bd5d03b0a38f7938eb77a0266b346d39a5e4b7ec3eb18",
+                      "sizeBytes":  55913667
                   },
     "extension":  {
-                      "version":  "0.4.0",
-                      "url":  "https://github.com/devaccindia-hash/stupefy/releases/download/v1.0.0/Stupefy-Extension-0.4.0.zip",
-                      "sha256":  "604faf1464354050ebb3614754b2e55fc460a6d363a0925abf5c2d9c0f58d1d8",
-                      "sizeBytes":  47341
+                      "version":  "0.5.0",
+                      "url":  "https://github.com/devaccindia-hash/stupefy/releases/download/v1.1.0/Stupefy-Extension-0.5.0.zip",
+                      "sha256":  "5d4669b045f597ca9b7f5ade574bce3c150e76a9519d96ed547f52f13c348780",
+                      "sizeBytes":  47511
                   }
 }
